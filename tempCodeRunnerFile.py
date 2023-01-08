@@ -1,1 +1,2 @@
-oin()
+
+class Widget2(Screen):

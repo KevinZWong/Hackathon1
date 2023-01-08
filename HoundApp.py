@@ -48,19 +48,28 @@ class MainWidget(Screen):
     
 
 class Widget2(Screen):
-    location = [device.location()["latitude"], device.location()["longitude"]]
+    
+    updatelocation = [device.location()["latitude"], device.location()["longitude"]]
     button_text = "Start"
-    distance = 0
-    round = ""
 
 
 
     def start(self):
+        
+        def updateLocation():
+            global updatelocation
+            device = api.devices[1]
+            while(1):
+                time.sleep(1.5)
+                updatelocation = [device.location()["latitude"], device.location()["longitude"]] 
+                print(updatelocation)
+
 
         def other_func():
-            global round
             device = api.devices[1]
-            self.distance = 0
+            location = [device.location()["latitude"], device.location()["longitude"]]
+            
+            distance = 0
 
 
             location = device.location()
@@ -77,10 +86,8 @@ class Widget2(Screen):
                 locationList.append(location)
 
                 distance = mpu.haversine_distance((locationList[0][0], locationList[0][1]), (locationList[1][0], locationList[1][1])) * 1000
-                round = int(distance / 5)
-                round = str(distance * 5)
-                print("round")
-                print(distance)
+
+                
                 if (state == 0):
                     if distance < 0.5:
                         stopCounter += 1
@@ -103,8 +110,13 @@ class Widget2(Screen):
         # set daemon to true so the thread dies when app is closed
         t.daemon = True
         # start the thread
-        t.start()   
-
+        t.start()  
+        # create the thread to invoke other_func with arguments (2, 5)
+        t2 = Thread(target=updateLocation)
+        # set daemon to true so the thread dies when app is closed
+        t2.daemon = True
+        # start the thread
+        t2.start()  
 
 
 class HoundApp(MDApp):
