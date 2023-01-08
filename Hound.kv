@@ -1,0 +1,66 @@
+#:import Mapview kivy.garden.mapview.MapView
+
+
+<MainWidget>:
+    BoxLayout:
+        orientation: "vertical"
+        padding: 120
+        spaceing: 0
+        Image:
+            source: "houndLogo_enhanced.jpg"
+            pos_hint: {"center_y": .6, "center_x": .5}
+
+        MDFillRoundFlatButton: 
+            text: "Get Started"
+            font_size: "50sp"
+            size_hint: .5, .15
+            pos_hint: {"center_x": 0.5}
+            pos_y: 1000
+            #rgba
+            color: 0, 1, 0 ,1
+            on_release: root.manager.current = "Widget2" 
+<Widget2>:
+
+
+    BoxLayout:        
+        orientation: "vertical"
+        padding: 50
+        spaceing: 10
+        
+
+
+        MapView:
+            size_hint: 1, 1
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+            double_tap_zoom: True
+            lat: root.location[0]
+            lon: root.location[1]
+            zoom: 20
+            #on_lat:
+            #on_lon: 
+            #    print('lon', self.lon)
+            MapMarkerPopup:
+                source:  "pointer.png"
+                lat: root.location[0]
+                lon: root.location[1]
+                MDFillRoundFlatButton: 
+                    text: root.button_text
+                    font_size: "30sp"
+                    pos_hint: {"center_x": 0.5}
+                    color: 0, 1, 0 ,1
+                    on_release: root.start()
+        BoxLayout:
+            size_hint: 1, 0.1
+            Label:
+                font_size: "50sp"
+                text: root.round
+                color: 0, 0, 0 ,1
+                
+            Label:
+                font_size: "50sp"
+                text: "hi"
+                color: 0, 0, 0 ,1
+
+
+
+
