@@ -33,17 +33,16 @@
             size_hint: 1, 1
             pos_hint: {"center_x": 0.5, "center_y": 0.5}
             double_tap_zoom: True
-            lat: root.updatelocation[0]
-                 id: updatelocation1
-            lon: root.updatelocation[1]
+            lat: root.location[0]
+            lon: root.location[1]
             zoom: 20
             #on_lat:
             #on_lon: 
             #    print('lon', self.lon)
             MapMarkerPopup:
                 source:  "pointer.png"
-                lat: root.updatelocation[0]
-                lon: root.updatelocation[1]
+                lat: root.location[0]
+                lon: root.location[1]
                 MDFillRoundFlatButton: 
                     text: root.button_text
                     font_size: "30sp"
@@ -58,4 +57,6 @@
                 pos_hint: {"center_x": 0.5}
                 color: 0, 1, 0 ,1
                 on_release: root.manager.current = "MainWidget" 
+
+
 
