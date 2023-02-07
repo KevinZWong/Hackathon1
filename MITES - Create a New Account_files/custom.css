@@ -1,0 +1,162 @@
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+body { font-family: Helvetica, Arial, sans-serif; color: #333; }
+h1, h2, h3, h4, h5, h6 { font-family: Helvetica, Arial, sans-serif; color: #333; }
+img { max-width: 100%; height: auto; }
+a, a:visited { text-decoration: none; }
+
+.ui-widget input, .ui-widget select, .ui-widget textarea, form fieldset > section > div span, form fieldset > section > div label,
+.formBuilder.form .formBuilderFormBreadCrumb ul li a.selected,
+table { color: #333; }
+
+/* header */
+.site-header { padding: 0; margin: 0 -20px; }
+.header_banner > img { display: block; margin: 0 auto; }
+.main-navigation { margin: 0; }
+.main-navigation li a { color: #333; font-weight: bold; }
+.mobile_nav { margin-top: 0; }
+.content-left .menu ul li a { color: #333; }
+
+
+/* breadcrumb */
+ul.breadcrumb { background-color: #f5f5f5; border-radius: 4px; list-style: outside none none; margin: 20px 0; padding: 8px 15px; }
+ul.breadcrumb li { display: inline-block; list-style-type: none; margin: 0 0 0 5px; padding: 0; font-size: 16px; }
+ul.breadcrumb li:after { display: none; }
+ul.breadcrumb > li + li:before { color: #ccc; content: "/ "; padding: 0 5px; }
+ul.breadcrumb li a { float: none; }
+.content-right ul.breadcrumb { margin-top: 0; }
+
+/* buttons */
+
+.btn, 
+button, 
+input[type="submit"], 
+input[type="reset"], 
+input[type="button"] { padding: 0 22px; font-size: 14px; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; height: 40px; line-height: 40px !important; text-transform: none; letter-spacing: 1; border: none; cursor: pointer; background: #ddd; font-family: inherit; color: #333 !important; }
+
+.btn:hover, 
+button:hover, 
+input[type="submit"]:hover, 
+input[type="reset"]:hover, 
+input[type="button"]:hover { border: none; background: #eee; }
+
+/* forms */
+
+input[type="text"], input[type="password"], input[type="email"], textarea, select { font-family: Helvetica, Arial, sans-serif; padding: 6px 4px; font-size: 15px; }
+select { padding: 5px 4px 4px; }
+.formBuilder fieldset section.readOnly div.view span.formValue { padding: 6px 4px; font-size: 15px; }
+.readOnly input[type="text"] { border: 1px solid lightgray; font-size: 15px; }
+
+.formBuilder fieldset section {
+    margin: 0 0 25px;
+    width: 100%;
+}
+.formBuilder fieldset section:after,
+.formBuilder fieldset section:before { display: block; content:""; clear: both; }
+form fieldset > section label, 
+.formBuilder .fields fieldset > section > div label {
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+.formBuilder fieldset section div.view span.details, 
+.formBuilder fieldset section div.view span.title, 
+.formBuilder fieldset section div.view div.fileUpload span.description { font-size: 14px; font-weight: normal; }
+
+.formBuilder fieldset section div.view div.listItem label { margin-bottom: 0; font-weight: normal; color: #333; }
+.formBuilder fieldset section.checkboxList div.view, 
+.formBuilder fieldset section.radioList div.view { padding: 0; }
+
+.formBuilder fieldset section div.view .lengthCounter label { font-weight: normal; }
+.formBuilder fieldset section.applicationName label.name { margin-bottom: 0; }
+
+.content-right div ul,
+.content-right div ol { margin-left: 0; }
+
+.search_filter_content { background: transparent; }
+
+.submitButtons a.btn { margin-right: 0; }
+.submitButtons .btn, 
+.submitButtons button, 
+.submitButtons input[type="submit"], 
+.submitButtons input[type="reset"], 
+.submitButtons input[type="button"] {padding: 0 6px; letter-spacing: -0.02em; font-size: 13px; }
+
+.gallery_details .judgingGallery_leftContent { width: 50%; float: left; padding-left: 15px; padding-right: 15px; }
+.gallery_details .judgingGallery_rightContent { width: 50%; float: right; padding-left: 15px; padding-right: 15px; }
+
+.main_content { width: 72%; }
+.main_content .gallery_grid { float: left; padding: 0 0px 25px 0; margin: 0 0 25px 11px; position: relative; width: 31.333%; background: #eee; border: 1px solid #eee; }
+.main_content .gallery_grid .gallery_img { float: none; width: auto; height: auto; background: #fff; text-align: center; }
+.main_content .gallery_grid .gallery_img img { margin: 0 auto; }
+.main_content .gallery_grid .gallery_desc { float: none; margin: 0; padding: 10px 5px 0; width: 100% !important; }
+.main_content .gallery_grid .judgingGallery_scoreBox .totalScore_text { margin: 10px 0; }
+.main_content .gallery_desc h3 a { font-size: 16px; }
+#content .main_content .gallery_grid:nth-of-type(3n+1) {
+    clear: both;
+}
+
+.sidebar_right { width: 25%; }
+
+@media (max-width: 1023px) {
+.main_content { float: left; }	
+.sidebar_right { float: right; margin-top: 0; }
+}
+
+@media (max-width: 991px) {
+.gallery_details .judgingGallery_leftContent { width: 100%; float: none; }
+.gallery_details .judgingGallery_rightContent { width: 100%; float: none; }	
+.submitButtons .btn, 
+.submitButtons button, 
+.submitButtons input[type="submit"], 
+.submitButtons input[type="reset"], 
+.submitButtons input[type="button"] { letter-spacing: normal; }
+
+.main_content { width: 100%; float: none; }	
+.sidebar_right { width: 100%; float: none; margin-top: 20px; }
+}
+
+@media (max-width: 767px) {
+.site-header { margin: 0 -10px; }
+#content .main_content .gallery_grid { width: 47%; }
+#content .main_content .gallery_grid:nth-of-type(3n+1) { clear: none; }
+
+#content .main_content .gallery_col {
+    margin: 0 auto;
+    max-width: 470px;
+    width: 100%;
+}
+#content .main_content .gallery_col .gallery_img, 
+#content .main_content .gallery_col .gallery_desc, 
+#content .main_content .gallery_col .gallery_list {
+    float: none;
+    margin: 0 auto;
+    width: 100%;
+}
+}
+
+@media (max-width: 479px) {
+.judgingGallery_info .submitButtons .btn, 
+.judgingGallery_info .submitButtons button, 
+.judgingGallery_info .submitButtons input[type="submit"], 
+.judgingGallery_info .submitButtons input[type="reset"], 
+.judgingGallery_info .submitButtons input[type="button"] { display: block !important; margin-bottom: 10px; max-width: none; width: 100%; }
+
+#content .main_content .gallery_grid { float: none; width: 100%; margin: 0; }
+}
+
+iframe
+{
+	max-width:100%;
+}

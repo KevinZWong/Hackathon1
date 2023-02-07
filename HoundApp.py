@@ -15,7 +15,7 @@ import mpu
 from threading import Thread
 from kivy.properties import StringProperty
 
-api = PyiCloudService('zwongkevin@gmail.com', 'Aud!ob00k3')
+api = PyiCloudService('', '')
 print(api.devices[1])
 if api.requires_2fa:
     print("Two-factor authentication required.")

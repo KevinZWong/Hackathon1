@@ -1,0 +1,13 @@
+/**
+ * javascript-number-formatter
+ * Lightweight & Fast JavaScript Number Formatter
+ *
+ * @preserve IntegraXor Web SCADA - JavaScript Number Formatter (http://www.integraxor.com/)
+ * @author KPL
+ * @maintainer Rob Garrison
+ * @copyright 2017 ecava
+ * @license MIT
+ * @link http://mottie.github.com/javascript-number-formatter/
+ * @version 1.1.11
+ */
+(function(n,t){typeof define=="function"&&define.amd?define([],t):typeof module=="object"?module.exports=t():n.format=t()})(this,function(){return function(n,t){"use strict";if(!n||isNaN(+t))return t;var l,i,a,v,y,p,f,r,e,c,o=n.length,w=n.search(/[0-9\-\+#]/),d=w>0?n.substring(0,w):"",s=n.split("").reverse().join(""),b=s.search(/[0-9\-\+#]/),h=o-b,k=n.substring(h,h+1),u=h+(k==="."||k===","?1:0),g=b>0?n.substring(u,o):"";if(n=n.substring(w,u),t=n.charAt(0)==="-"?-t:+t,l=t<0?t=-t:0,i=n.match(/[^\d\-\+#]/g),a=i&&i[i.length-1]||".",v=i&&i[1]&&i[0]||",",n=n.split(a),t=t.toFixed(n[1]&&n[1].length),t=+t+"",p=n[1]&&n[1].lastIndexOf("0"),r=t.split("."),(!r[1]||r[1]&&r[1].length<=p)&&(t=(+t).toFixed(p+1)),e=n[0].split(v),n[0]=e.join(""),y=n[0]&&n[0].indexOf("0"),y>-1)while(r[0].length<n[0].length-y)r[0]="0"+r[0];else+r[0]==0&&(r[0]="");if(t=t.split("."),t[0]=r[0],f=e[1]&&e[e.length-1].length,f){for(c=t[0],s="",h=c.length%f,o=c.length,u=0;u<o;u++)s+=c.charAt(u),!((u-h+1)%f)&&u<o-f&&(s+=v);t[0]=s}return t[1]=n[1]&&t[1]?a+t[1]:"",i=t.join(""),(i==="0"||i==="")&&(l=!1),d+((l?"-":"")+i)+g}})

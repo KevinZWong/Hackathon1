@@ -1,0 +1,11 @@
+function mobileMenu()
+{if($(document).width()<768)
+{$('a.dropdown').off().click(function()
+{$(this).siblings('ul').slideToggle();return false;});}}
+$(document).ready(function()
+{$('.mobile_nav').click(function()
+{$('.nav-menu').slideToggle();return false;});$('.content-left .menu h4').click(function()
+{if($(window).width()<768)
+$(this).siblings().slideToggle();});$('.nav-menu li').each(function(index,element)
+{$(this).find('ul').siblings('a').addClass('dropdown');});mobileMenu();});$(window).resize(function()
+{mobileMenu();});
